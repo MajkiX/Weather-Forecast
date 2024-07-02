@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/f5c4d62a0e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="logo"><img id="logoImg" src="img/logo.png"></div>
+        <form id="serchForm">
+            <input id="cityInput" placeholder="Enter the city..." type="text" >
+            <button id="btnGetCity">Search</button>
+        </form>
+    </header>
+    <div class="main">
+        <div id="iconBox"><img id="iconImg" src=""><span id="description"></span></div>
+        <div id="date"></div>
+        <div id="cityName"></div>
+        <div id="valuesBox">
+            <span><i class="fa-solid fa-temperature-three-quarters"></i> Temperature: <span class="weatherValues"></span></span><br>
+            <span><i class="fa-solid fa-temperature-full"></i> Maximum temperature: <span class="weatherValues"></span></span><br>
+            <span><i class="fa-solid fa-temperature-quarter"></i> Minimal temperature: <span class="weatherValues"></span></span><br>
+            <span><i class="fa-solid fa-wind"></i> Wind speed: <span class="weatherValues"></span></span><br>
+            <span><i class="fa-solid fa-arrows-down-to-line"></i> Atmospheric pressure: <span class="weatherValues"></span></span>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

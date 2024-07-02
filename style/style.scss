@@ -1,0 +1,221 @@
+// Iport czcionki z google fonts
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+$primaryColor: #2C3E50;
+$secondaryColor: rgb(238, 240, 241);
+$btnColor: rgb(21, 143, 183);
+
+@mixin dropShadow{
+    filter: drop-shadow(5px 5px 5px #23313f);
+}
+
+body{
+    margin: 0;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    height: 100vh;
+    background-color: $secondaryColor;
+    font-family: 'Yantramanav';
+}
+
+header{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+    background-color: $primaryColor;
+    @include dropShadow();
+
+    #logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        object-fit: contain;
+
+        #logoImg{
+            height: 20vmin;
+        }
+    }
+
+    #serchForm{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5vmax;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+        #cityInput{
+            height: 4vmax;
+            width: 13vmax;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            color: $primaryColor;
+            font-size: 1vmax;
+            
+            &:focus{
+                outline: 0;
+            }
+        }
+
+        #btnGetCity{
+            height: 3vmax;
+            width: 10vmax;
+            background-color: $btnColor;
+            font-weight: bold;
+            color: $secondaryColor;
+            border: 0 none;
+            border-radius: 1px;
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px 5px;
+            text-decoration: none;
+            font-size: 0.9vmax;
+        }
+    }
+}
+
+.main{
+    display: grid;
+    grid-template-rows: 0.5fr 0.1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    animation-name: bgTransition;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+
+    @keyframes bgTransition{
+        from{
+            background-image: url('/img/bg3.webp');
+        }
+        50%{
+            background-image: url('/img/bg2.webp');
+        }
+        to{
+            background-image: url('/img/bg1.webp');
+        }
+    }
+
+    & > *{
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        @include dropShadow();
+        border-radius: 0.5vmax;
+ 
+    }
+
+    #iconBox{
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 2;
+        display: grid;
+        grid-template-rows: 80% 20%;
+        width: 23vh;
+        aspect-ratio: 1/1.1;
+        text-align: center;
+        place-self: end center;
+        object-fit: contain;
+
+        #description{
+            font-size: 1vmax;
+            text-transform: capitalize;
+        }
+        #iconImg{
+            width: 90%;
+            height: 100%;
+            object-fit: fill;
+            margin: 0 auto;
+        }
+    }
+
+    #date{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-row-end: 4;
+        grid-column-end: 2;
+        margin-top: 10vh;
+        height: 8vmin;
+        width: 20vw;
+        font-size: 3.5vmin;
+        padding: 1vmax;
+        place-self: start center;
+        text-align: center;
+        display: flex;
+        span{
+            margin: auto auto;
+        }
+    }
+
+    #cityName{
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-row-end: 2;
+        grid-column-end: 3;
+        width: 20vw;
+        font-size: 4vmin;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 1vh 0;
+        place-self: center left;
+    }
+
+    #valuesBox{
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-row-end: 4;
+        grid-column-end: 3;
+        width: 40vw;
+        height: 40vh;
+        font-size: 4vmin;
+        line-height: 4vmax;
+        padding: 0.5em
+    }
+}
+
+.weatherValues{
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+@media screen and (max-width: 1200px){
+    header{
+        #serchForm{
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1vh;
+        #cityName,#iconBox,#date,#valuesBox{
+            place-self: center;
+        }
+
+        #cityName{
+            width: 30vw;
+        }
+        
+        #date{
+            margin: 0;
+            width: 30vw;
+        }
+
+        #iconBox{
+            margin-top: 3vh;
+        }
+    }
+
+}
