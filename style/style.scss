@@ -85,10 +85,6 @@ header{
     height: 100%;
     background-position: center;
     background-size: cover;
-    animation-name: bgTransition;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
 
 
     @keyframes bgTransition{
@@ -102,6 +98,11 @@ header{
             background-image: url('/img/bg1.webp');
         }
     }
+
+    animation-name: bgTransition;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 
     & > *{
         background-color: $primaryColor;
