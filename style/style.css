@@ -76,13 +76,13 @@ header #serchForm #btnGetCity {
 }
 @keyframes bgTransition {
   from {
-    background-image: url("/img/bg3.webp");
+    background-image: url("../img/bg1.webp");
   }
   50% {
-    background-image: url("/img/bg2.webp");
+    background-image: url("../img/bg2.webp");
   }
   to {
-    background-image: url("/img/bg1.webp");
+    background-image: url("../img/bg1.webp");
   }
 }
 .main > * {
